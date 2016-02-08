@@ -1,1 +1,1 @@
-# xronos
+# xronos χρόνος God of Time
