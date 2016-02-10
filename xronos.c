@@ -24,5 +24,4 @@ main(int argc, char *argv[]){
   (mod_t <= 0)?
     printf("\n\n \033[22;32mMachine Time: %2i:%02i:%02i\033[0m\n\n", (mod_t % 24+24)%24, (*xronos).tm_min, (*xronos).tm_sec):
     printf("\n\n \033[22;32mMachine Time: %2i:%02i:%02i\033[0m\n\n", mod_t, (*xronos).tm_min, (*xronos).tm_sec);
-
 }
