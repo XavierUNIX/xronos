@@ -1,7 +1,8 @@
 /*
 
    UNIX Use: cc xronos.c -o xronos
-             ./xronos
+             ./xronos; ./xronos d
+	OR     xronos d; xronos
 
 */
 
@@ -9,7 +10,8 @@
 #include <math.h>
 #include <time.h>
 
-#define NYC      (4)
+#define NYC       (5)
+#define DAY "python3 date.py || python3 /Users/<user>/bin/date.py"
 
 main(int argc, char *argv[]){
 
@@ -21,7 +23,11 @@ main(int argc, char *argv[]){
   xronos = gmtime(&raw_t);
   mod_t = (xronos->tm_hour-NYC);
 
-  (mod_t <= 0)?
-    printf("\n\n \033[22;32mMachine Time: %2i:%02i:%02i\033[0m\n\n", (mod_t % 24+24)%24, (*xronos).tm_min, (*xronos).tm_sec):
-    printf("\n\n \033[22;32mMachine Time: %2i:%02i:%02i\033[0m\n\n", mod_t, (*xronos).tm_min, (*xronos).tm_sec);
+  if (argc == 2) system(DAY);
+  else {
+    (mod_t <= 0)?
+      printf("\033[22;32mχρόνος (EST) -> %2i:%02i:%02i\033[0m\n", (mod_t % 24+24)%24, (*xronos).tm_min, (*xronos).tm_sec):
+      printf("\033[22;33mχρόνος (EST) -> %2i:%02i:%02i\033[0m\n", mod_t, (*xronos).tm_min, (*xronos).tm_sec);
+    printf("\033[22;33mχρόνος (GMT) -> %2i:%02i:%02i\033[0m\n", (*xronos).tm_hour, (*xronos).tm_min, (*xronos).tm_sec);
+  }
 }
