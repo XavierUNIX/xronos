@@ -11,7 +11,7 @@
 #include <time.h>
 
 #define NYC       (5)
-#define DAY "python3 date.py || python3 /Users/<user>/bin/date.py"
+#define DAY "python date.py || python /Users/<user>/bin/date.py"
 
 main(int argc, char *argv[]){
 
