@@ -31,5 +31,3 @@ main(int argc, char *argv[]){
     printf("\033[22;33mχρόνος (GMT) -> %2i:%02i:%02i\033[0m\n", (*xronos).tm_hour, (*xronos).tm_min, (*xronos).tm_sec);
   }
 }
-[22;33mχρόνος (EST) -> 18:08:31[0m
-[22;33mχρόνος (GMT) -> 22:08:31[0m
