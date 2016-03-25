@@ -10,7 +10,7 @@
 #include <math.h>
 #include <time.h>
 
-#define NYC       (5)
+#define NYC       (4)
 #define DAY "python date.py || python /Users/<user>/bin/date.py"
 
 main(int argc, char *argv[]){
